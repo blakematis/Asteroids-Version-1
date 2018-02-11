@@ -1,4 +1,7 @@
 package Objects;
+
+import com.codename1.ui.geom.Point2D;
+
 /**
  * GameObject
  * 		Abstract class that provides a basis for further gameObject
@@ -10,12 +13,14 @@ package Objects;
  */
 public abstract class GameObject {
 	
-	/*********************************DATA FIELDS*************************************/
-	private double x;
-	private double y;
-	private int color;
+	/*---------------------------------------DATA---------------------------------------*/
 	
-	/********************************CONSTRUCTORS*************************************/
+	private double x;		// X-Cartesian coordinate
+	private double y;		// Y-Cartesian coordinate
+	private int color;		// RGB Integer color value
+	private Point2D location; // Location of the GameObject X, Y Cartesian coordinates
+	
+	/*-----------------------------------CONSTRUCTORS-----------------------------------*/
 	
 	/**
 	 * Default Constructor
@@ -37,10 +42,12 @@ public abstract class GameObject {
 		this.x = x;
 		this.y = y;
 		this.color = color;
+		this.location = new Point2D(x,y);
 	}
 	
-	/******************************SETTERS AND GETTERS********************************/
 	
+	
+	/*--------------------------------GETTERS AND SETTERS-------------------------------*/
 	
 	/**
 	 * Gets the x-Cartesian coordinate of this GameObject
@@ -95,6 +102,18 @@ public abstract class GameObject {
 	 */
 	public void setColor(int color) {
 		this.color = color;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public Point2D getLocation() {
+		return location;
+	}
+
+	public void setLocation(Point2D location) {
+		this.location = location;
 	}
 	
 	
