@@ -1,6 +1,10 @@
 package com.mycompany.a1;
 
 import com.codename1.ui.Form;
+import com.codename1.ui.Label;
+import com.codename1.ui.TextField;
+import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.events.ActionListener;
 
 /**
  * Primary class Game is a controller that encapsulates the flow of control in the game.
@@ -41,8 +45,26 @@ public class Game extends Form{
 	/**
 	 * Accepts and executes user commands
 	 */
-	public void play(){
-		//TODO
+	private void play(){
+		Label myLabel = new Label("Enter a Command: ");
+		this.addComponent(myLabel);
+		final TextField myTextField = new TextField();
+		this.addComponent(myTextField);
+		this.show();
 		
+		myTextField.addActionListener(new ActionListener(){
+			
+			public void actionPerformed(ActionEvent evt){
+					
+				String sCommand = myTextField.getText().toString();
+				myTextField.clear();
+				switch(sCommand.charAt(0)){
+					case 'e':
+						//gw.eliminate;
+						break;
+					//TODO add code to handle rest of the commands.
+				}
+			}
+		});
 	}
 }
