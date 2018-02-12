@@ -1,6 +1,7 @@
 package Objects;
 
 import com.codename1.ui.geom.Point2D;
+import Enum.CartesianCoordinateEnum;;
 
 /**
  * GameObject
@@ -64,7 +65,15 @@ public abstract class GameObject {
 	 * 		is the Double x-Cartesian coordinate
 	 */
 	public void setX(double x) {
-		this.x = x;
+		try{
+			if(x >= CartesianCoordinateEnum.MINIMUM_X_VALUE.coordinate() && x <= CartesianCoordinateEnum.MAXIMUM_X_VALUE.coordinate()){
+				this.x = x;
+			}else{
+				throw new Exception("X-Cartesian Coordinate is outside of maximum or minimum range");
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	/**
