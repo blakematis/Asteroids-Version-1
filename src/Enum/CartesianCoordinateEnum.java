@@ -1,7 +1,7 @@
 package Enum;
 /**
  * CartesianCoordinateEnum
- * 		Enum that sets values for the maximum and minimum Cartesian
+ * 		Enumeration that sets values for the maximum and minimum Cartesian
  * 		Coordinates in the Asteroid game.
  * @author Blake Matis
  *
