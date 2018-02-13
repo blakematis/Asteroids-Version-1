@@ -40,9 +40,6 @@ public class Starter {
             return;
         }
         new Game();
-        Form hi = new Form("Asteroids", BoxLayout.y());
-        hi.add(new Label("Asteroids"));
-        hi.show();
         
     }
 

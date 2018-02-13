@@ -59,9 +59,72 @@ public class Game extends Form{
 				String sCommand = myTextField.getText().toString();
 				myTextField.clear();
 				switch(sCommand.charAt(0)){
-					case 'e':
-						//gw.eliminate;
+					case 'a':
+						gw.newAsteroid();
 						break;
+					case 'y':
+						gw.newFlyingSaucer();
+						break;
+					case 'b':
+						gw.newBlinkingSpaceStation();
+						break;
+					case 's':
+						gw.newShip();
+						break;
+					case 'i':
+						gw.decreaseShipSpeed();
+						break;
+					case 'd':
+						gw.decreaseShipSpeed();
+						break;
+					case 'l':
+						gw.turnShipLeft();
+						break;
+					case 'r': 
+						gw.turnShipLeft();
+						break;
+					case 'f':
+						gw.fireMissile();
+						break;
+					case 'j':
+						gw.jumpThroughSpace();
+						break;
+					case 'n':
+						gw.loadNewMissiles();
+						break;
+					case 'k':
+						gw.missileKilledAsteroid();
+						break;
+					case 'e':
+						gw.eliminate();
+						break;
+					case 'c':
+						gw.shipCrashedIntoAsteroid();
+						break;
+					case 'h':
+						gw.shipHitFlyingSaucer();
+						break;
+					case 'x':
+						gw.asteroidsExterminated();
+						break;
+					case 'w':
+						gw.asteroidWhackedFlyingSaucer();
+						break;
+					case 't':
+						gw.tick();
+						break;
+					case 'p':
+						gw.print();
+						break;
+					case 'm':
+						gw.map();
+						break;
+					case 'q':
+						gw.quit();
+						break;
+					default:
+						break;
+					
 					//TODO add code to handle rest of the commands.
 				}
 			}
