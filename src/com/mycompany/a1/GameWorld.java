@@ -1,4 +1,7 @@
 package com.mycompany.a1;
+
+import Objects.SpaceStation;
+
 /**
  * The GameWorld is a model that holds the program's data such as
  * a collection of game GameObjects and other state variables.
@@ -21,7 +24,7 @@ public class GameWorld {
 	 * Default Constructor
 	 */
 	public GameWorld(){
-		//TODO default constructor
+		
 	}
 	
 	/*-------------------------------------METHODS--------------------------------------*/
@@ -128,7 +131,8 @@ public class GameWorld {
 	 */
 	public void map() {
 		// TODO Auto-generated method stub
-		
+		SpaceStation spaceStation = new SpaceStation(2,2,100);
+		System.out.println(spaceStation.toString());
 	}
 
 	/**

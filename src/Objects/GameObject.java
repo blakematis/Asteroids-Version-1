@@ -1,5 +1,6 @@
 package Objects;
 
+import com.codename1.charts.util.ColorUtil;
 import com.codename1.ui.geom.Point2D;
 import Enum.CartesianCoordinateEnum;;
 
@@ -29,7 +30,7 @@ public abstract class GameObject {
 	public GameObject(){
 		
 	}
-	
+
 	/**
 	 * Constructor with location and color.
 	 * @param x
@@ -46,7 +47,39 @@ public abstract class GameObject {
 		this.location = new Point2D(x,y);
 	}
 	
+	/*--------------------------------------METHODS-------------------------------------*/
 	
+	@SuppressWarnings("deprecation")
+	@Override
+	/**
+	 * Prints the ObjectName and basic attribute information.
+	 */
+	public String toString(){
+		String myString = null;
+		try{
+			myString = getClassName(getClass().getName()) + ": loc=" + location.getX() +
+				", " + location.getY() + " color=[" + ColorUtil.red(color) + "," +
+				ColorUtil.green(color) + "," + ColorUtil.blue(color) + "]";
+		} catch(NullPointerException e){
+			return e.getMessage();
+		}
+		return myString;
+		
+	}
+	
+	public String getClassName(String packageAndClassName){
+		StringBuffer sb = new StringBuffer();
+		sb.append(packageAndClassName);
+		int index = 0;
+		for(index = 0; index< sb.length(); index++){
+			if(sb.charAt(index) == '.'){
+				break;
+			}
+		}
+		sb.delete(0, index+1);
+		
+		return sb.toString();
+	}
 	
 	/*--------------------------------GETTERS AND SETTERS-------------------------------*/
 	
@@ -66,7 +99,8 @@ public abstract class GameObject {
 	 */
 	public void setX(double x) {
 		try{
-			if(x >= CartesianCoordinateEnum.MINIMUM_X_VALUE.coordinate() && x <= CartesianCoordinateEnum.MAXIMUM_X_VALUE.coordinate()){
+			if(x >= CartesianCoordinateEnum.MINIMUM_X_VALUE.coordinate() &&
+					x <= CartesianCoordinateEnum.MAXIMUM_X_VALUE.coordinate()){
 				this.x = x;
 			}else{
 				throw new Exception("X-Cartesian Coordinate is outside of maximum or minimum range");
