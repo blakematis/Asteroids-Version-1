@@ -1,5 +1,6 @@
 package com.mycompany.a1;
 
+import Objects.Ship;
 import Objects.SpaceStation;
 
 /**
@@ -133,6 +134,12 @@ public class GameWorld {
 		// TODO Auto-generated method stub
 		SpaceStation spaceStation = new SpaceStation();
 		System.out.println(spaceStation.toString());
+		Ship ship = new Ship();
+		System.out.print(ship.toString());
+		for(int i = 0; i<10; i++){
+			ship.move();
+			System.out.println(ship.toString());
+		}
 	}
 
 	/**

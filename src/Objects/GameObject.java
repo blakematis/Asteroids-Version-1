@@ -65,18 +65,25 @@ public abstract class GameObject {
 		
 	}
 	
+	/**
+	 * Helper method to get the class name from the packageAndClassName.
+	 * @param packageAndClassName
+	 * 		is a string of package.className form
+	 * @return className
+	 * 		is a string of just the current class's name.
+	 */
 	public String getClassName(String packageAndClassName){
-		StringBuffer sb = new StringBuffer();
-		sb.append(packageAndClassName);
+		StringBuffer className = new StringBuffer();
+		className.append(packageAndClassName);
 		int index = 0;
-		for(index = 0; index< sb.length(); index++){
-			if(sb.charAt(index) == '.'){
+		for(index = 0; index< className.length(); index++){
+			if(className.charAt(index) == '.'){
 				break;
 			}
 		}
-		sb.delete(0, index+1);
+		className.delete(0, index+1);
 		
-		return sb.toString();
+		return className.toString();
 	}
 	
 	/*--------------------------------GETTERS AND SETTERS-------------------------------*/
@@ -100,6 +107,7 @@ public abstract class GameObject {
 			if(x >= CartesianCoordinateEnum.MINIMUM_X_VALUE.coordinate() &&
 					x <= CartesianCoordinateEnum.MAXIMUM_X_VALUE.coordinate()){
 				this.x = x;
+				this.location.setX(x);
 			}else{
 				throw new Exception("X-Cartesian Coordinate is outside of maximum or minimum range");
 			}
@@ -124,6 +132,7 @@ public abstract class GameObject {
 	 */
 	public void setY(double y) {
 		this.y = y;
+		this.location.setY(y);
 	}
 	
 	/**
@@ -159,6 +168,8 @@ public abstract class GameObject {
 	 */
 	public void setLocation(Point2D location) {
 		this.location = location;
+		setX(this.location.getX());
+		setY(this.location.getY());
 	}
 	
 	/**
