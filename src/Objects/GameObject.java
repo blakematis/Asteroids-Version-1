@@ -1,8 +1,11 @@
 package Objects;
 
+import java.util.Random;
+
 import com.codename1.charts.util.ColorUtil;
 import com.codename1.ui.geom.Point2D;
-import Enum.CartesianCoordinateEnum;;
+import Enum.CartesianCoordinateEnum;
+import Enum.ColorEnum;;
 
 /**
  * GameObject
@@ -21,15 +24,9 @@ public abstract class GameObject {
 	private double y;		// Y-Cartesian coordinate
 	private int color;		// RGB Integer color value
 	private Point2D location; // Location of the GameObject X, Y Cartesian coordinates
-	
+	private Random rand;
 	/*-----------------------------------CONSTRUCTORS-----------------------------------*/
 	
-	/**
-	 * Default Constructor
-	 */
-	public GameObject(){
-		
-	}
 
 	/**
 	 * Constructor with location and color.
@@ -40,10 +37,11 @@ public abstract class GameObject {
 	 * @param color
 	 * 		is the Integer rgb value of color.
 	 */
-	public GameObject(double x, double y, int color){
-		this.x = x;
-		this.y = y;
-		this.color = color;
+	public GameObject(){
+		rand = new Random();
+		this.x = (double) rand.nextInt((int) (CartesianCoordinateEnum.MAXIMUM_X_VALUE.coordinate()));
+		this.y = (double) rand.nextInt((int) (CartesianCoordinateEnum.MAXIMUM_Y_VALUE.coordinate()));
+		this.color = rand.nextInt(ColorEnum.WHITE.colorValue());
 		this.location = new Point2D(x,y);
 	}
 	
@@ -155,8 +153,20 @@ public abstract class GameObject {
 		return location;
 	}
 
+	/**
+	 * 
+	 * @param location
+	 */
 	public void setLocation(Point2D location) {
 		this.location = location;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Random getRandom(){
+		return rand;
 	}
 	
 	

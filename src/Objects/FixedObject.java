@@ -1,12 +1,16 @@
 package Objects;
-
+/**
+ * 
+ * @author Blake
+ *
+ */
 public abstract class FixedObject extends GameObject {
 
 	/**
 	 * 
 	 */
-	public FixedObject(double x, double y, int color){
-		super(x, y, color);
+	public FixedObject(){
+		super();
 	}
 	
 	@Override

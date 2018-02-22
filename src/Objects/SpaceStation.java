@@ -1,9 +1,16 @@
 package Objects;
-
+/**
+ * 
+ * @author Blake
+ *
+ */
 public class SpaceStation extends FixedObject{
 
-	public SpaceStation(double x, double y, int color){
-		super(x, y, color);
+	/**
+	 * 
+	 */
+	public SpaceStation(){
+		super();
 	}
 	
 	@Override

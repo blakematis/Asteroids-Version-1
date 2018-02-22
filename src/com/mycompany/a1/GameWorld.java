@@ -131,7 +131,7 @@ public class GameWorld {
 	 */
 	public void map() {
 		// TODO Auto-generated method stub
-		SpaceStation spaceStation = new SpaceStation(2,2,100);
+		SpaceStation spaceStation = new SpaceStation();
 		System.out.println(spaceStation.toString());
 	}
 
