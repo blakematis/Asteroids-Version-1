@@ -2,6 +2,7 @@
 Text based Asteroids game demonstrating OOP design patterns and methodologies.
 
 LICENSING
+
 blakematis/Asteroids-Version-1 is licensed under the
 GNU General Public License v3.0
 
