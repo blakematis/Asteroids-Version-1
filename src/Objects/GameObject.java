@@ -132,8 +132,11 @@ public abstract class GameObject {
 	 * 		is the Double y-Cartesian coordinate
 	 */
 	public void setY(double y) {
-		this.y = y;
-		this.location.setY(y);
+		if(y >= CartesianCoordinateEnum.MINIMUM_Y_VALUE.coordinate() &&
+				y <= CartesianCoordinateEnum.MAXIMUM_Y_VALUE.coordinate()){
+			this.y = y;
+			this.location.setY(y);
+		}
 	}
 	
 	/**
