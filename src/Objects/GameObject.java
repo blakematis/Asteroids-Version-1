@@ -5,7 +5,8 @@ import java.util.Random;
 import com.codename1.charts.util.ColorUtil;
 import com.codename1.ui.geom.Point2D;
 import Enum.CartesianCoordinateEnum;
-import Enum.ColorEnum;;
+import Enum.ColorEnum;
+import Enum.DefaultDoubleValueEnum;
 
 /**
  * GameObject
@@ -20,11 +21,11 @@ public abstract class GameObject {
 	
 	/*---------------------------------------DATA---------------------------------------*/
 	
-	private double x;		// X-Cartesian coordinate
-	private double y;		// Y-Cartesian coordinate
-	private int color;		// RGB Integer color value
-	private Point2D location; // Location of the GameObject X, Y Cartesian coordinates
-	private Random rand;
+	private double x = DefaultDoubleValueEnum.DEFAULT_VALUE.value();		// X-Cartesian coordinate
+	private double y = DefaultDoubleValueEnum.DEFAULT_VALUE.value();		// Y-Cartesian coordinate
+	private int color = 0;		// RGB Integer color value
+	private Point2D location = null; // Location of the GameObject X, Y Cartesian coordinates
+	private Random rand = null;
 	/*-----------------------------------CONSTRUCTORS-----------------------------------*/
 	
 

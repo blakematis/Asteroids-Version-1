@@ -2,6 +2,12 @@ package com.mycompany.a1;
 
 import Objects.Ship;
 import Objects.SpaceStation;
+import java.util.Vector;
+import Objects.GameObject;
+import Objects.Missile;
+import Objects.Asteroid;
+import Objects.FlyingSaucer;
+
 
 /**
  * The GameWorld is a model that holds the program's data such as
@@ -13,6 +19,13 @@ import Objects.SpaceStation;
 public class GameWorld {
 	
 	/*---------------------------------------DATA---------------------------------------*/
+	private Vector<GameObject> gameObjectsVector;
+	private Ship ship;
+	private SpaceStation spaceStation;
+	private Asteroid asteroid;
+	private Missile missile;
+	private FlyingSaucer flyingSaucer;
+	
 	
 
 	
@@ -25,7 +38,7 @@ public class GameWorld {
 	 * Default Constructor
 	 */
 	public GameWorld(){
-		
+		init();
 	}
 	
 	/*-------------------------------------METHODS--------------------------------------*/
@@ -34,50 +47,84 @@ public class GameWorld {
 	 * 
 	 */
 	public void init(){
-		
+		gameObjectsVector = new Vector<GameObject>();
+		newShip();
 	}
 
 	/**
-	 * 
+	 * Decreases the speed of the Ship.
 	 */
 	public void decreaseShipSpeed() {
-		// TODO Auto-generated method stub
-		
+		ship.decreasSpeed();
 	}
 
+	/**
+	 * Adds a new Asteroid to the GameWorld
+	 */
 	public void newAsteroid() {
-		// TODO Auto-generated method stub
-		
+		asteroid = new Asteroid();
+		gameObjectsVector.add(asteroid);
 	}
 
+	/**
+	 * Adds a new FlyingSaucer to the GameWorld.
+	 */
 	public void newFlyingSaucer() {
-		// TODO Auto-generated method stub
-		
+		flyingSaucer = new FlyingSaucer();
+		gameObjectsVector.add(flyingSaucer);
 	}
 
+	/**
+	 * Adds a new SpaceStation to the GameWorld.
+	 */
 	public void newBlinkingSpaceStation() {
-		// TODO Auto-generated method stub
-		
+		spaceStation = new SpaceStation();
+		gameObjectsVector.add(spaceStation);
 	}
 
+	/**
+	 * Adds a new Ship to the GameWorld.
+	 */
 	public void newShip() {
-		// TODO Auto-generated method stub
+		ship = new Ship();
+		gameObjectsVector.add(ship);
 		
 	}
 
+	
 	public void eliminate() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * Steers the ship to the left.
+	 */
 	public void turnShipLeft() {
-		// TODO Auto-generated method stub
-		
+		ship.steerLeft();
+	}
+	
+	/**
+	 * Steers the ship to the right.
+	 */
+	public void turnShipRight(){
+		ship.steerRight();
 	}
 
+	/**
+	 * The ship fires a Missile from its current location if the ship
+	 * has missiles available to fire.
+	 * 
+	 * On Success a new missile is created with the ships current location,
+	 * direction, and speed. The missile is then added to the GameWorld and the
+	 * ships current missile count is decreased by one.
+	 */
 	public void fireMissile() {
-		// TODO Auto-generated method stub
-		
+		if(ship.getMissileCount() > 0){
+			missile = new Missile(ship.getLocation(), ship.getDirection(), ship.getSpeed());
+			gameObjectsVector.add(missile);
+			ship.decreaseMissiles();
+		}
 	}
 
 	public void jumpThroughSpace() {
@@ -85,9 +132,12 @@ public class GameWorld {
 		
 	}
 
+	/**
+	 * The ships missile count is reloaded and set to the max
+	 * missile capacity for the ship.
+	 */
 	public void loadNewMissiles() {
-		// TODO Auto-generated method stub
-		
+		ship.setMissileCount(ship.getMaxMissileCount());
 	}
 
 	public void missileKilledAsteroid() {
@@ -131,18 +181,8 @@ public class GameWorld {
 	 * GameWorld.
 	 */
 	public void map() {
-		// TODO Auto-generated method stub
-		SpaceStation spaceStation = new SpaceStation();
-		
-		SpaceStation spaceStation2 = new SpaceStation();
-		System.out.println(spaceStation.toString());
-		System.out.println(spaceStation2.toString());
-		System.out.println(spaceStation.toString());
-		Ship ship = new Ship();
-		System.out.print(ship.toString());
-		for(int i = 0; i<10; i++){
-			ship.move();
-			System.out.println(ship.toString());
+		for(int index = 0; index < gameObjectsVector.size(); index++){
+			System.out.println(gameObjectsVector.elementAt(index).toString());
 		}
 	}
 

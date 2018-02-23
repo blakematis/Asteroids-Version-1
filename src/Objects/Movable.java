@@ -18,11 +18,12 @@ public abstract class Movable extends GameObject implements IMovable{
 	private int direction;
 	
 	/*-------------------------------CONSTRUCTOR-------------------------*/
-	public Movable(){
-		super();
+	public Movable(){	
 		this.speed = getRandom().nextInt(SpeedEnum.MAXIMUM_SPEED.speed);
 		this.direction = getRandom().nextInt(DirectionEnum.MAXIMUM_DEGREES.degrees);
 	}
+	
+	/*--------------------------------METHODS----------------------------*/
 	
 	/**
 	 * 
@@ -72,6 +73,11 @@ public abstract class Movable extends GameObject implements IMovable{
 	 * @param direction
 	 */
 	public void setDirection(int direction) {
+		if(direction > 359){
+			direction = direction-360;
+		}else if(direction < 0){
+			direction = 360 + direction;
+		}
 		this.direction = direction;
 	}
 }
