@@ -105,7 +105,7 @@ public class Game extends Form{
 						gw.shipHitFlyingSaucer();
 						break;
 					case 'x':
-						gw.asteroidsExterminated();
+						gw.asteroidExterminated();
 						break;
 					case 'w':
 						gw.asteroidWhackedFlyingSaucer();

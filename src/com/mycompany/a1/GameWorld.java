@@ -155,7 +155,7 @@ public class GameWorld {
 		
 	}
 
-	public void asteroidsExterminated() {
+	public void asteroidExterminated() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -181,6 +181,7 @@ public class GameWorld {
 	 * GameWorld.
 	 */
 	public void map() {
+		//TODO
 		for(int index = 0; index < gameObjectsVector.size(); index++){
 			System.out.println(gameObjectsVector.elementAt(index).toString());
 		}
@@ -190,6 +191,7 @@ public class GameWorld {
 	 * Terminates the program.
 	 */
 	public void quit() {
+		//TODO
 		System.exit(0);
 	}
 }
