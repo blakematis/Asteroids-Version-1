@@ -17,6 +17,7 @@ public abstract class Movable extends GameObject implements IMovable{
 	private int speed;
 	private int direction;
 	
+	/*-------------------------------CONSTRUCTOR-------------------------*/
 	public Movable(){
 		super();
 		this.speed = getRandom().nextInt(SpeedEnum.MAXIMUM_SPEED.speed);
@@ -28,8 +29,8 @@ public abstract class Movable extends GameObject implements IMovable{
 	 */
 	public void move(){
 		Point2D oldLocation = getLocation();
-		double deltaX = Math.toRadians(Math.cos(direction)) * speed;
-		double deltaY = Math.toRadians(Math.sin(direction)) * speed;
+		double deltaX = Math.cos(Math.toRadians(direction)) * speed;
+		double deltaY = Math.sin(Math.toRadians(direction)) * speed;
 		Point2D newLocation = new Point2D(oldLocation.getX() + deltaX, oldLocation.getY() + deltaY);
 		setLocation(newLocation);		
 	}
@@ -41,8 +42,36 @@ public abstract class Movable extends GameObject implements IMovable{
 		return myString;
 	}
 	
-	
-	
-	
-	
+	/*---------------------------GETTERS AND SETTERS----------------------*/
+	/**
+	 * 
+	 * @return
+	 */
+	public int getSpeed() {
+		return speed;
+	}
+
+	/**
+	 * 
+	 * @param speed
+	 */
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public int getDirection() {
+		return direction;
+	}
+
+	/**
+	 * 
+	 * @param direction
+	 */
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
 }

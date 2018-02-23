@@ -133,6 +133,10 @@ public class GameWorld {
 	public void map() {
 		// TODO Auto-generated method stub
 		SpaceStation spaceStation = new SpaceStation();
+		
+		SpaceStation spaceStation2 = new SpaceStation();
+		System.out.println(spaceStation.toString());
+		System.out.println(spaceStation2.toString());
 		System.out.println(spaceStation.toString());
 		Ship ship = new Ship();
 		System.out.print(ship.toString());
