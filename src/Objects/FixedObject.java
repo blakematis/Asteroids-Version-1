@@ -26,7 +26,7 @@ public abstract class FixedObject extends GameObject {
 	@Override
 	public String toString(){
 		String parentStr = super.toString();
-		String myString = parentStr + " , " +  id;
+		String myString = parentStr + " , id=" +  id;
 		return myString;
 	}
 

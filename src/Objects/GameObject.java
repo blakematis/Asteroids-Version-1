@@ -56,8 +56,8 @@ public abstract class GameObject {
 	public String toString(){
 		String myString = null;
 		try{
-			myString = getClassName(getClass().getName()) + ": loc=" + location.getX() +
-				", " + location.getY() + " color=[" + ColorUtil.red(color) + "," +
+			myString = getClassName(getClass().getName()) + ": loc=" + Math.round(location.getX()*10.0)/10.0 +
+				", " + Math.round(location.getY()*10.0)/10.0 + " color=[" + ColorUtil.red(color) + "," +
 				ColorUtil.green(color) + "," + ColorUtil.blue(color) + "]";
 		} catch(NullPointerException e){
 			return e.getMessage();

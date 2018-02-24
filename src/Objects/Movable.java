@@ -26,7 +26,7 @@ public abstract class Movable extends GameObject implements IMovable{
 	/*--------------------------------METHODS----------------------------*/
 	
 	/**
-	 * 
+	 * General move for all movable objects.
 	 */
 	public void move(){
 		Point2D oldLocation = getLocation();
@@ -45,32 +45,39 @@ public abstract class Movable extends GameObject implements IMovable{
 	
 	/*---------------------------GETTERS AND SETTERS----------------------*/
 	/**
-	 * 
-	 * @return
+	 * Gets the speed of the object.
+	 * @return speed
+	 * 		The speed of the object.
 	 */
 	public int getSpeed() {
 		return speed;
 	}
 
 	/**
-	 * 
+	 * Sets the speed of the object in the range 0-10.
 	 * @param speed
+	 * 		The speed of the object.
 	 */
 	public void setSpeed(int speed) {
-		this.speed = speed;
+		if(speed <= 10 && speed >= 0){
+			this.speed = speed;
+		}
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Gets the heading of the object
+	 * @return direciton
+	 * 		The heading of the object.
 	 */
 	public int getDirection() {
 		return direction;
 	}
 
 	/**
-	 * 
+	 * Sets the heading or direction of the object 0-359.
+	 * Values are degrees and 90 is considered North.
 	 * @param direction
+	 * 		The direction of the object.
 	 */
 	public void setDirection(int direction) {
 		if(direction > 359){

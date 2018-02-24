@@ -17,10 +17,12 @@ public class Ship extends Movable implements ISteerable{
 
 	private int maxMissileCount = 12;
 	private int missileCount;
-	private int steerLeftDegrees = 10;
-	private int steerRightDegrees = -10;
+	private int steerDegrees = 10;
+	
 	/**
-	 * 
+	 * Player ship constructor that sets its default or starting location in the center.
+	 * Speed to zero and direciton to North. Fills the missiles to max of 12 and sets
+	 * its color to AQUA.
 	 */
 	public Ship(){
 		super();
@@ -40,10 +42,21 @@ public class Ship extends Movable implements ISteerable{
 		return myString;
 	}
 	
+	public void moveToDefaultLocation(){
+		setX(512);
+		setY(384);
+	}
+	
 	/**
 	 * Decreases the speed of the ship by 1.
 	 */
-	public void decreasSpeed(){
+	public void increaseSpeed(){
+		setSpeed(getSpeed()+1);
+	}
+	/**
+	 * Decreases the speed of the ship by 1.
+	 */
+	public void decreaseSpeed(){
 		setSpeed(getSpeed()-1);
 	}
 	
@@ -88,7 +101,7 @@ public class Ship extends Movable implements ISteerable{
 	 * Turns the ship to the left by steerLeftDegrees.
 	 */
 	public void steerLeft() {
-		this.setDirection(getDirection() + steerLeftDegrees);
+		setDirection(getDirection() + steerDegrees);
 		
 	}
 
@@ -96,6 +109,6 @@ public class Ship extends Movable implements ISteerable{
 	 * Turns the ship to the right by steerRightDegrees.
 	 */
 	public void steerRight() {
-		this.setDirection(getDirection() + steerRightDegrees);
+		setDirection(getDirection() - steerDegrees);
 	}
 }
