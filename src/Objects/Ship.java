@@ -1,6 +1,4 @@
 package Objects;
-import java.util.Vector;
-
 import Enum.ColorEnum;
 import Interfaces.ISteerable;
 

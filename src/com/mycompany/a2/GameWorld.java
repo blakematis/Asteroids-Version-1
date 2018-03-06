@@ -1,4 +1,4 @@
-package com.mycompany.a1;
+package com.mycompany.a2;
 
 import Objects.Ship;
 import Objects.SpaceStation;

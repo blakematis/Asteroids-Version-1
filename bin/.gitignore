@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/Objects/
->>>>>>> master
 /com/
-/Enum/
-/Interfaces/
+/Objects/
+/Commands/
