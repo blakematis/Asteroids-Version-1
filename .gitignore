@@ -3,34 +3,22 @@
 
 *.launch
 
-*.launch
-
 .project
-
-*.class
 
 *.class
 
 *.props
 
 *.xml
-
-*.class
-
-*.class
-
-*.class
-
-*.class
 
 *.properties
 
 *.jar
 
-*.xml
-
 *.props
 
 *.class
 
 .project
+
+A2Prj/
