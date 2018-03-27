@@ -2,8 +2,11 @@ package com.mycompany.a2;
 
 import Objects.Ship;
 import Objects.SpaceStation;
+
+import java.util.Observable;
 import java.util.Vector;
 
+import Interfaces.IGameWorld;
 import Interfaces.IMovable;
 import Objects.GameObject;
 import Objects.Missile;
@@ -18,7 +21,7 @@ import Objects.FlyingSaucer;
  * @author Blake Matis
  *
  */
-public class GameWorld {
+public class GameWorld extends Observable  implements IGameWorld{
 	
 	/*---------------------------------------DATA---------------------------------------*/
 	//Objects

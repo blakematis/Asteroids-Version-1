@@ -3,3 +3,8 @@
 *.xml
 *.launch
 *.classpath
+*.class
+
+*.jar
+
+.project

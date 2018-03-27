@@ -5,7 +5,10 @@ import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
+
+import Views.MapView;
 //TEST
+import Views.PointsView;
 
 /**
  * Primary class Game is a controller that encapsulates the flow of control in the game.
@@ -22,6 +25,8 @@ public class Game extends Form{
 	
 	/*---------------------------------------DATA---------------------------------------*/
 	private GameWorld gw;
+	private MapView mv;
+	private PointsView pv;
 
 	
 
@@ -35,6 +40,11 @@ public class Game extends Form{
 	 */
 	public Game(){
 		this.gw = new GameWorld();
+		this.mv = new MapView();
+		this.pv = new PointsView();
+		gw.addObserver(mv);
+		gw.addObserver(pv);
+		this.show();
 		this.gw.init();
 		play();
 	}
